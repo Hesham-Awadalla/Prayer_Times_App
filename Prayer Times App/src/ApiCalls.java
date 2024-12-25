@@ -47,7 +47,7 @@ public class ApiCalls
 
 	public String getTemperature(String latitude, String longitude)
 	{
-		String key = "********************";
+		String key = "*************************";
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create(STR."http://api.weatherapi.com/v1/current.json?Key=\{key}&q=\{latitude},\{longitude}"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
@@ -78,7 +78,7 @@ public class ApiCalls
 
 	public JSONObject getCurrentLocation()
 	{
-		String key = "**********************";
+		String key = "************************";
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create(STR."https://api.ipgeolocation.io/ipgeo?apiKey=\{key}"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())

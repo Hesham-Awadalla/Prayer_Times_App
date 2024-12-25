@@ -14,7 +14,7 @@ public class DatabaseAccess
 		try
         (
 	        // create a database connection
-	        Connection connection = DriverManager.getConnection("jdbc:sqlite::resource:"+ getClass().getResource("/" + "cities.db").toString(), "", "");
+	        Connection connection = DriverManager.getConnection("jdbc:sqlite::resource:"+ getClass().getResource("/" + "worldcities.db").toString(), "", "");
 	        Statement statement = connection.createStatement();
         )
         {
