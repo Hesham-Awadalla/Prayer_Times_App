@@ -20,7 +20,9 @@ public class DatabaseAccess
         {
 	        statement.setQueryTimeout(30);  // set timeout to 30 sec.
 	
-	        ResultSet rs = statement.executeQuery(STR."select lat, lng from cities WHERE city='\{city}' AND country='\{country}'");
+	        ResultSet rs = statement.executeQuery("select lat, lng from cities WHERE city='" + city + "' AND country='" + country + "'");
+	        // Or with "String Templates (STR)", a preview feature of JDK 21!
+//	        ResultSet rs = statement.executeQuery(STR."select lat, lng from cities WHERE city='\{city}' AND country='\{country}'");
 	
 	        while(rs.next())
 	        {

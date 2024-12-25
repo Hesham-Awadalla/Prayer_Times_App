@@ -10,13 +10,14 @@ import org.json.JSONObject;
 
 public class ApiCalls
 {
-	
 	public JSONObject getPrayerTimes(String latitude, String longitude)
 	{
 		String currentDate = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
 		
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(STR."https://api.aladhan.com/v1/timings/\{currentDate}?latitude=\{latitude}&longitude=\{longitude}"))
+				.uri(URI.create("https://api.aladhan.com/v1/timings/" + currentDate + "?latitude=" + latitude + "&longitude=" +longitude))
+				// Or with "String Templates (STR)", a preview feature of JDK 21!
+//				.uri(URI.create(STR."https://api.aladhan.com/v1/timings/\{currentDate}?latitude=\{latitude}&longitude=\{longitude}"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		
@@ -47,9 +48,10 @@ public class ApiCalls
 
 	public String getTemperature(String latitude, String longitude)
 	{
-		String key = "*************************";
+		String key = "**************************";
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(STR."http://api.weatherapi.com/v1/current.json?Key=\{key}&q=\{latitude},\{longitude}"))
+				.uri(URI.create("http://api.weatherapi.com/v1/current.json?Key=" + key + "&q=" + latitude + "," + longitude))
+//				.uri(URI.create(STR."http://api.weatherapi.com/v1/current.json?Key=\{key}&q=\{latitude},\{longitude}"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		
@@ -78,9 +80,10 @@ public class ApiCalls
 
 	public JSONObject getCurrentLocation()
 	{
-		String key = "************************";
+		String key = "**************************";
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(STR."https://api.ipgeolocation.io/ipgeo?apiKey=\{key}"))
+				.uri(URI.create("https://api.ipgeolocation.io/ipgeo?apiKey=" + key))
+//				.uri(URI.create(STR."https://api.ipgeolocation.io/ipgeo?apiKey=\{key}"))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
 		

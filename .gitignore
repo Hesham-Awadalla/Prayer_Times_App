@@ -1,4 +1,5 @@
-/DB/
 /Prayer Times App/bin
 *.url
 *.lnk
+*.jar
+*.settings

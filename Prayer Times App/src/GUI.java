@@ -36,16 +36,13 @@ public class GUI extends JFrame
 		setBounds(100, 100, 400, 524);
 		setResizable(false);
 		setIconImage(new ImageIcon(this.getClass().getResource("/free mosque icon.png")).getImage().getScaledInstance(30, 30,  java.awt.Image.SCALE_SMOOTH));
+		setLocationRelativeTo(null);  // Centering the window
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 119, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
-		// centering the window
-		setLocationRelativeTo(null);
-
+		contentPane.setLayout(null);  // Set the absolute layout
 		setContentPane(contentPane);
-		//Set the absolute layout
-		contentPane.setLayout(null);
 		
 		txtCity = new JTextField();
 		txtCity.setFont(new Font("Arial", Font.PLAIN, 13));
